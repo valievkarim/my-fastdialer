@@ -32,7 +32,7 @@ type Dialer struct {
 func NewDialer(options Options) (*Dialer, error) {
 	var resolvers []string
 	// Add system resolvers as the first to be tried
-	if options.ResolversFile {
+	if ! options.ResolversFile {
 		systemResolvers, err := loadResolverFile()
 		if err == nil && len(systemResolvers) > 0 {
 			resolvers = systemResolvers
